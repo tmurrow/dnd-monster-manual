@@ -28,7 +28,7 @@ const routes: Routes = [
   },
   {
     path: 'monsters/:name',
-    component: MonstserDetailsComponent,
+    component: MonsterDetailsComponent,
     data: {
       title: 'Monster Details'
     },
