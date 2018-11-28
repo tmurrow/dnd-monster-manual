@@ -1,0 +1,29 @@
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Size</th>
+        <th>Type</th>
+        <th>Alignment</th>
+        <th>AC</th>
+        <th>HP</th>
+        <th>CR</th>
+        <th>XP</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let monster of monsters" [routerLink]="[monster.route]">
+        <td>{{monster.name}}</td>
+        <td>{{monster.size}}</td>
+        <td>{{monster.monster_type}}</td>
+        <td>{{monster.alignment}}</td>
+        <td>{{monster.ac}} ({{monster.ac_note}})</td>
+        <td>{{monster.hp}} ({{monster.hd}})</td>
+        <td>{{monster.cr}}</td>
+        <td>{{monster.xp}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,48 @@
+name		string
+size		string
+type		string
+alignment	string
+ac		number
+?ac note	string
+hp		number
+hit dice	string
+ability scores	number[]
+saves		number[]
+passive p	number
+cr		number
+xp		number
+languages	string[]
+tags		string[]
+vulnerabilities string[]
+immunities	string[]
+resistances	string[]
+condition imm.	string[]
+climate/terrain	string
+frequency	string
+organization	string
+activity cycle	string
+diet		string
+habitat/society	string
+ecology		string
+skills		{ skill: string, bonus: number }[]
+senses		{ type: string, distance: number }[] (telepaty goes here)
+speeds		{ type: string, speed: number }[]
+attacks		
+{ 
+	weapon	string
+	type	string
+	tohit	number
+	reach	number
+	range	string
+	targets	number
+	avg dmg	number
+	dmg	string
+	dmgtype	string
+	effect: string
+}[]
+abilities	
+{
+	name	string
+	type	string (action, passive, legendary?,)
+	text	string
+}[]
