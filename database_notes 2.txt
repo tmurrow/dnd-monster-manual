@@ -1,0 +1,9 @@
+add legendary points? legendary action reset?
+
+add physical description (from 2e)
+
+relationships to other monsters? 
+string[] or {othermonstername: string, relation: string}
+
+possible potion components from monstser? or item?
+{item: string, source: string}

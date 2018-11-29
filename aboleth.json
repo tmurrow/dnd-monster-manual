@@ -1,0 +1,103 @@
+{
+  "name": "aboleth",
+  "size": "large",
+  "monster_type": "aberration",
+  "tags": ["legendary"],
+  "alignment": "lawful evil",
+  "ac": 17,
+  "ac_note": "natural armor",
+  "hp": 135,
+  "hd": "18d10+36",
+  "ability_scores": [21, 9, 15, 18, 15, 18],
+  "saving_throws": [5, -1, 6, 8, 6, 4],
+  "passive_perception": 20,
+  "cr": 10,
+  "xp": 5900,
+  "languages": ["deep speech"],
+  "vulnerabilities": [],
+  "immunities": [],
+  "resistances": [],
+  "condition_immunities": [],
+  "climate": ["tropical", "temperate"],
+  "terrain": ["subterranean"],
+  "rarity": "very rare",
+  "organization": "brood",
+  "activity_cycle": "night",
+  "diet": "omnivore",
+  "habitat_society": "An aboleth brood consists of a parent and one to three offspring. Though the offspring are as large and as strong as the parent, they defer to the parent in all matters and obey it implicitly. Aboleth have both male and female sexual organs. A mature aboleth reproduces once every five years by concealing itself in a cavern or other remote area, then laying a single egg and covering it in slime. The parent aboleth guards the egg while the embryo grows and develops, a process that takes about five years. A newborn aboleth takes about 10 years to mature. The aboleth spends most of its time searching for slaves, preferably human ones. It is rumored that the aboleth use their slaves to construct huge underwater cities, though none have ever been found. The aboleth are rumored to know ancient, horrible secrets that predate the existence of man, but these rumors are also unsubstantiated. There is no doubt that aboleth retain a staggering amount of knowledge. An offspring acquires all of its parent's knowledge at birth, and a mature aboleth acquires the knowledge of any intelligent being it consumes. An aboleth's treasure consists of items taken from its slaves. The items are buried in caverns under a layer of slime resembling gray mud, recognizable by the distinctive rancid grease odor.",
+  "ecology": "The omnivorous aboleth will eat any organic matter, usually algae and micro-organisms, but they are also fond of intelligent prey so they can absorb nutrients and information at the same time. Aboleth have no natural enemies, as even the mightiest marine creatures give them a wide berth. Aboleth slime is sometimes used as a component for potions of water breathing.",
+  "skills": [{
+    "skill": "history",
+    "bonus": 12
+  },{
+  	"skill": "perception",
+  	"bonus": 10
+  }],
+  "senses": [{
+  	"sense": "telepathy",
+  	"distance": 120
+  }],
+  "speeds": [{
+    "speed_type": "walk",
+    "speed": 10
+  },{
+    "speed_type": "swim",
+    "speed": 40
+  }],
+  "attacks": [{
+    "weapon": "tentacle",
+    "attack_type": "melee weapon",
+    "to_hit": 9,
+    "reach": 10,
+    "range": "",
+    "num_targets": "one",
+    "average_damage": 12,
+    "damage": "2d6+5",
+    "damage_type": "bludgeoning",
+    "effect": "If the target is a creature, it must succeed on a DC 14 Constitution saving throw or become diseased. The disease has no effect for 1 minute and can be removed by any magic that cures disease. After 1 minute, the diseased creature's skin becomes translucent and slimy, the creature can't regain hit points unless it is underwater, and the disease can be removed only by heal or another disease-curing spell of 6th level or higher. When the creature is outside a body of water, it takes 6 (1d12) acid damage every 10 minutes unless moisture is applied to the skin before 10 minutes have passed."
+  },{
+    "weapon": "tail",
+    "attack_type": "melee weapon",
+    "to_hit": 9,
+    "reach": 10,
+    "range": "",
+    "num_targets": "one",
+    "average_damage": 15,
+    "damage": "3d6+5",
+    "damage_type": "bludgeoning",
+    "effect": ""
+  }],
+  "abilities": [{
+    "name": "amphibious",
+    "ability_type": "passive",
+    "effect": "The aboleth can breathe air and water"
+  },{
+    "name": "mucous cloud",
+    "ability_type": "passive",
+    "effect": "While underwater, the aboleth is surrounded by transformative mucus. A creature that touches the aboleth or that hits it with a melee attack while within 5 feet of it must make a DC 14 Constitution saving throw. On a failure, the creature is diseased for 1d4 hours. The diseased creature can breathe only underwater."
+  },{
+    "name": "probing telepathy",
+    "ability_type": "passive",
+    "effect": "If a creature communicates telepathically with the aboleth, the aboleth learns the creature's greatest desires if the aboleth can see the creature."
+  },{
+    "name": "multiattack",
+    "ability_type": "action",
+    "effect": "The aboleth makes three tentacle attacks."
+  }, {
+    "name": "enslave (3/day)",
+    "ability_type": "action",
+    "effect": "The aboleth targets one creature it can see within 30 feet of it. The target must succeed on a DC 14 Wisdom saving throw or be magically charmed by the aboleth until the aboleth dies or until it is on a different plane of existence from the target. The charmed target is under the aboleth's control and can't take reactions, and the aboleth and the target can communicate telepathically with each other over any distance. Whenever the charmed target takes damage, the target can repeat the saving throw. On a success, the effect ends. No more than once every 24 hours, the target can also repeat the saving throw when it is at least 1 mile away from the aboleth."
+  },{
+    "name": "detect",
+    "ability_type": "legendary",
+    "effect": "The aboleth makes a Wisdom (Perception) check."
+  },{
+    "name": "tail swipe",
+    "ability_type": "legendary",
+    "effect": "The aboleth makes one tail attack."
+  },{
+    "name": "psychic drain (2 actions)",
+    "ability_type": "legendary",
+    "effect": "One creature charmed by the aboleth takes 10 (3d6) psychic damage, and the aboleth regains hit points equal to the damage the creature takes."
+  }]
+}

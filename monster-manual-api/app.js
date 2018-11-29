@@ -3,21 +3,41 @@ let bodyParser = require('body-parser')
 let path = require('path')
 let mongoose = require('mongoose')
 let cors = require('cors')
-//import Student Model from ./models
 let Monster = require('./models/monster.js')
-//initialize express app
+
 let app = express()
+
 app.use(cors())
-//configure express app to parse json content and form data
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-//configure express app to serve static files
 app.use(express.static(path.join(__dirname, 'public')))
-//connect to mongodb instance where database is mydb
-mongoose.connect('mongodb://127.0.0.1:27017/monster_manual')
-//save new student
+mongoose.connect('mongodb://127.0.0.1:27017/monster_manual', { useNewUrlParser: true})
+
+app.listen(3000, () => {
+ console.log('Server listening on port 3000')
+})
+
+app.get('/monsters', (req, res, next) => {
+  //use find() method to return all monsters
+  Monster.find((err, result) => {
+    if(err) { console.log(err) }
+    else { res.json(result) }
+  })
+})
+
+app.get('/monsters/:name', (req, res, next) => {
+  // find monster by name
+  let name = req.params.name
+  Monster.findOne({name: name}, (err, monster) => {
+    if(err) { console.log(err) }
+    else {
+      res.json(monster)
+    }
+  })
+})
+
+//save new monster
 app.post('/monsters/newmonster', (req, res, next) => {
- //create new student using schema
  let newMonster = new Monster({
    name: req.body.name,
    size: req.body.size,
@@ -52,21 +72,9 @@ app.post('/monsters/newmonster', (req, res, next) => {
    attacks: req.body.attacks,
    abilities: req.body.abilities
  })
- //save new student to db
+ //save new monster to db
  newMonster.save((err, result) => {
    if (err) { console.log(err) }
    else { res.json(result) }
  })
-})
-
-app.get('/monsters', (req, res, next) => {
-  //use find() method to return all students
-  Monster.find((err, result) => {
-    if(err) { console.log(err) }
-    else { res.json(result) }
-  })
-})
-//listen on port 3000
-app.listen(3000, () => {
- console.log('Server listening on port 3000')
 })
