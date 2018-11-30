@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-monster-details',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./monster-details.component.scss']
 })
 export class MonsterDetailsComponent implements OnInit {
-
-  constructor() { }
+monster;
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.monster = this.route.snapshot.data.monster.body;
   }
 
 }

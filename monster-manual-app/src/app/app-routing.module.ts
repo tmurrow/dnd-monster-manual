@@ -33,7 +33,7 @@ const routes: Routes = [
       title: 'Monster Details'
     },
     resolve: {
-      character: MonsterResolver
+      monster: MonsterResolver
     }
   }
 ];

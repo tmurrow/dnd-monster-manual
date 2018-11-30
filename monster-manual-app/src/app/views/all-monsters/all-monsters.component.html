@@ -13,7 +13,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let monster of monsters" [routerLink]="[monster.route]">
+      <tr *ngFor="let monster of monsters" (click)="navigate(monster.route, monster._id)">
+        <!-- [routerLink]="[{path: monster.route, data: {id: monster._id}}]" -->
         <td>{{monster.name}}</td>
         <td>{{monster.size}}</td>
         <td>{{monster.monster_type}}</td>

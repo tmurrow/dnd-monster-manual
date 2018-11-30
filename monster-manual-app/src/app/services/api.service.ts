@@ -19,6 +19,10 @@ export class ApiService {
     return this.http.get<Monster[]>(this.ApiBaseUrl+'monsters', {observe: 'response'});
   }
 
+  getMonsterById(id): Observable<HttpResponse<any>> {
+    return this.http.get<any>(this.ApiBaseUrl+'monsters/' + id, {observe: 'response'});
+  }
+
   getMonsterByName(name): Observable<HttpResponse<any>> {
     return this.http.get<any>(this.ApiBaseUrl+'monsters/' + name, {observe: 'response'});
   }

@@ -25,16 +25,27 @@ app.get('/monsters', (req, res, next) => {
   })
 })
 
-app.get('/monsters/:name', (req, res, next) => {
+app.get('/monsters/:id', (req, res, next) => {
   // find monster by name
-  let name = req.params.name
-  Monster.findOne({name: name}, (err, monster) => {
+  let id = req.params.id
+  Monster.findOne({_id: id}, (err, monster) => {
     if(err) { console.log(err) }
     else {
       res.json(monster)
     }
   })
 })
+
+// app.get('/monsters/:name', (req, res, next) => {
+//   // find monster by name
+//   let name = req.params.name
+//   Monster.findOne({name: name}, (err, monster) => {
+//     if(err) { console.log(err) }
+//     else {
+//       res.json(monster)
+//     }
+//   })
+// })
 
 //save new monster
 app.post('/monsters/newmonster', (req, res, next) => {
