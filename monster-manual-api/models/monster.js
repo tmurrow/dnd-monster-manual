@@ -55,6 +55,7 @@ let monsterSchema = mongoose.Schema({
   organization: String,
   activity_cycle: String,
   diet: String,
+  physical_description: String,
   habitat_society: String,
   ecology: String,
   item_components: [{

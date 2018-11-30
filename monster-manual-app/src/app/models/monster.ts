@@ -54,6 +54,7 @@ export class Monster {
   organization: string;
   activity_cycle: string;
   diet: string;
+  physical_description: string;
   habitat_society: string;
   ecology: string;
   item_components: [{
