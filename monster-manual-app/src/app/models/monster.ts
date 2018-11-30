@@ -1,6 +1,6 @@
 export class Monster {
-  route: string;
   name: string;
+  url: string;
   size: string;
   monster_type: string;
   tags: [string];
@@ -9,36 +9,27 @@ export class Monster {
   ac_note: string;
   hp: string;
   hd: string;
-  ability_scores: [number];
-  saving_throws: [number];
-  passive_perception: number;
-  cr: number;
-  xp: number;
-  languages: [string];
-  vulnerabilities: [string];
-  immunities: [string];
-  resistances: [string];
-  condition_immunities: [string];
-  climate: [string];
-  terrain: [string];
-  rarity: string;
-  organization: string;
-  activity_cycle: string;
-  diet: string;
-  habitat_society: string;
-  ecology: string;
-  skills: {
-    skill: string,
-    bonus: number
-  }[];
-  senses: {
-    sense: string,
-    distance: number
-  }[];
   speeds: {
     speed_type: string,
     speed: number
   }[];
+  ability_scores: [number];
+  saving_throws: [number];
+  skills: {
+    skill: string,
+    bonus: number
+  }[];
+  immunities: [string];
+  resistances: [string];
+  vulnerabilities: [string];
+  condition_immunities: [string];
+  senses: {
+    sense: string,
+    distance: number
+  }[];
+  languages: [string];
+  cr: number;
+  xp: number;
   attacks: {
     weapon: string,
     attack_type: string,
@@ -56,4 +47,21 @@ export class Monster {
     ability_type: string,
     effect: string
   }[];
+  legendary_actions: number;
+  climate: [string];
+  terrain: [string];
+  rarity: string;
+  organization: string;
+  activity_cycle: string;
+  diet: string;
+  habitat_society: string;
+  ecology: string;
+  item_components: [{
+    item: string,
+    source: string
+  }];
+  monster_relationships: [{
+    monster_id: string,
+    relationship: string
+  }];
 }

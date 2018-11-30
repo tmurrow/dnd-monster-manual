@@ -12,7 +12,6 @@ export class MonsterResolver implements Resolve<any> {
 
   resolve(route: ActivatedRouteSnapshot) {
     this.idSubscription = this.idService.data.subscribe((data) => this.monsterId = data);
-    console.log(this.monsterId);
     return this.apiService.getMonsterById(this.monsterId);
     // const name = route.params['name'];
     // return this.apiService.getMonsterByName(name);

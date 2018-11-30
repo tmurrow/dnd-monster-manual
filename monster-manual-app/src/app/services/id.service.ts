@@ -12,6 +12,5 @@ export class IdService {
 
   updateId(data: string) {
     this.dataSource.next(data);
-    console.log("update id: " + data)
   }
 }
