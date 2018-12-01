@@ -24,7 +24,6 @@ export class ApiService {
   }
 
   getMonsterByName(url): Observable<HttpResponse<any>> {
-    console.log("service: " + url);
-    return this.http.get<any>(this.ApiBaseUrl+'monsters/' + url, {observe: 'response'});    
+    return this.http.get<any>(this.ApiBaseUrl+'monsters/' + url, {observe: 'response'});
   }
 }

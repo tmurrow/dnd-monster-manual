@@ -9,6 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './views/home/home.component';
 import { AllMonstersComponent } from './views/all-monsters/all-monsters.component';
 import { MonsterDetailsComponent } from './views/monster-details/monster-details.component';
+import { NewMonsterComponent } from './views/new-monster/new-monster.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MonsterDetailsComponent } from './views/monster-details/monster-details
     NavbarComponent,
     HomeComponent,
     AllMonstersComponent,
-    MonsterDetailsComponent
+    MonsterDetailsComponent,
+    NewMonsterComponent
   ],
   imports: [
     BrowserModule,

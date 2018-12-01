@@ -39,7 +39,6 @@ app.get('/monsters', (req, res, next) => {
 app.get('/monsters/:url', (req, res, next) => {
   // find monster by name
   let url = req.params.url
-  console.log(url)
   Monster.findOne({url: url}, (err, monster) => {
     if(err) { console.log(err) }
     else {

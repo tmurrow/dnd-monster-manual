@@ -9,7 +9,6 @@ export class MonsterResolver implements Resolve<any> {
 
   resolve(route: ActivatedRouteSnapshot) {
     const url = route.params['url'];
-    console.log("resolver: " + url);
     return this.apiService.getMonsterByName(url);
   }
 }
