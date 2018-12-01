@@ -1,19 +1,15 @@
-import { Injectable, OnInit, OnDestroy } from '@angular/core';
-import { ApiService, IdService } from '../services';
-import { Subscription } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { ApiService } from '../services';
 import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 
 @Injectable()
 export class MonsterResolver implements Resolve<any> {
-  monsterId;
-  private idSubscription: Subscription;
 
-  constructor(private apiService: ApiService, private idService: IdService) {}
+  constructor(private apiService: ApiService) {}
 
   resolve(route: ActivatedRouteSnapshot) {
-    this.idSubscription = this.idService.data.subscribe((data) => this.monsterId = data);
-    return this.apiService.getMonsterById(this.monsterId);
-    // const name = route.params['name'];
-    // return this.apiService.getMonsterByName(name);
+    const url = route.params['url'];
+    console.log("resolver: " + url);
+    return this.apiService.getMonsterByName(url);
   }
 }

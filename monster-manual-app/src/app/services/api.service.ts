@@ -23,7 +23,8 @@ export class ApiService {
     return this.http.get<any>(this.ApiBaseUrl+'monsters/' + id, {observe: 'response'});
   }
 
-  getMonsterByName(name): Observable<HttpResponse<any>> {
-    return this.http.get<any>(this.ApiBaseUrl+'monsters/' + name, {observe: 'response'});
+  getMonsterByName(url): Observable<HttpResponse<any>> {
+    console.log("service: " + url);
+    return this.http.get<any>(this.ApiBaseUrl+'monsters/' + url, {observe: 'response'});    
   }
 }
