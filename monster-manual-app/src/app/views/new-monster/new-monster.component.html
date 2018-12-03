@@ -2,49 +2,219 @@
   <h1>New Monster</h1>
   <form>
     <div class="form-group">
-      <label>Name</label>
-      <input type="text" class="form-control" placeholder="Enter the monster's name">
+      <label class="form-label-lg">Name</label>
+      <input type="text" class="form-control form-control-lg" placeholder="Enter the monster's name">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-4">
+        <label>Size</label>
+        <select class="form-control">
+          <option *ngFor="let size of sizes">{{size}}</option>
+        </select>
+      </div>
+      <div class="form-group col-4">
+        <label>Type</label>
+        <select class="form-control">
+          <option *ngFor="let type of types">{{type}}</option>
+        </select>
+      </div>
+      <div class="form-group col-4">
+        <label>Alignment</label>
+        <select class="form-control">
+          <option *ngFor="let alignment of alignments">{{alignment}}</option>
+        </select>
+      </div>
     </div>
     <div class="form-group">
-      <label>Size</label>
-      <select class="form-control">
-        <option>Tiny</option>
-        <option>Small</option>
-        <option>Medium</option>
-        <option>Large</option>
-        <option>Huge</option>
-        <option>Gargantuan</option>
+      <select class="form-control" size="4" multiple>
+        <option>Blinded</option>
+        <option>Charmed</option>
+        <option>Deafened</option>
       </select>
+    </div>
+
+    <hr>
+
+    <div class="form-row">
+      <div class="form-group col-1">
+        <label>AC</label>
+        <input type="number" class="form-control" placeholder="AC">
+      </div>
+      <div class="form-group col-5">
+        <label>AC note</label>
+        <input type="text" class="form-control" placeholder="AC notes, source, etc.">
+      </div>
+      <div class="form-group col-1">
+        <label>HP</label>
+        <input type="number" class="form-control" placeholder="HP">
+      </div>
+      <div class="form-group col-5">
+        <label>Hit dice</label>
+        <input type="text" class="form-control" placeholder="Hit dice, 1d8+2, etc.">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-2">
+        <label>Speed</label>
+        <select class="form-control">
+          <option *ngFor="let speed of speeds">{{speed}}</option>
+        </select>
+      </div>
+      <div class="form-group col-2">
+        <label>Distance</label>
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" placeholder="Distance">
+          <div class="input-group-append">
+            <span class="input-group-text">ft.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="form-row">
+      <div class="form-group col-2" *ngFor="let ability of ability_scores">
+        <label>{{ability}}</label>
+        <input type="number" class="form-control" placeholder="{{ability}}">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-2" *ngFor="let ability of ability_scores">
+        <label>{{ability}} Save</label>
+        <input type="number" class="form-control" placeholder="{{ability}} Save">
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="form-row">
+      <div class="form-group col-3">
+        <label>Damage Immunities</label>
+        <select class="form-control" size="4" multiple>
+          <option *ngFor="let damage_type of damage_types">{{damage_type}}</option>
+        </select>
+      </div>
+      <div class="form-group col-3">
+        <label>Damage Resistances</label>
+        <select class="form-control" size="4" multiple>
+          <option *ngFor="let damage_type of damage_types">{{damage_type}}</option>
+        </select>
+      </div>
+      <div class="form-group col-3">
+        <label>Damage Vulnerabilities</label>
+        <select class="form-control" size="4" multiple>
+          <option *ngFor="let damage_type of damage_types">{{damage_type}}</option>
+        </select>
+      </div>
+      <div class="form-group col-3">
+        <label>Condition Immunities</label>
+        <select class="form-control" size="4" multiple>
+          <option *ngFor="let condition of conditions">{{condition}}</option>
+        </select>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="form-row">
+      <div class="form-group col-2">
+        <label>Sense</label>
+        <select class="form-control" size="4" multiple>
+          <option *ngFor="let sense of senses">{{sense}}</option>
+        </select>
+      </div>
+      <div class="form-group col-2">
+        <label>Distance</label>
+        <div class="input-group mb-3">
+          <input type="number" class="form-control" placeholder="Distance">
+          <div class="input-group-append">
+            <span class="input-group-text">ft.</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-4">
+        <label>Languages</label>
+        <select class="form-control" size="4" multiple>
+          <option>Draconic</option>
+          <option>Celestial</option>
+          <option>Infernal</option>
+          <option>Abyssal</option>
+        </select>
+      </div>
+      <div class="form-group col-2">
+        <label>CR</label>
+        <input type="number" class="form-control" placeholder="CR">
+      </div>
+      <div class="form-group col-2">
+        <label>XP</label>
+        <input type="number" class="form-control" placeholder="XP">
+      </div>
+    </div>
+
+    <hr>
+
+    <h3>Abilities</h3>
+    <div class="form-row">
+      <div class="form-group col-3">
+        <label>Ability Name</label>
+        <input type="text" class="form-control" placeholder="Ability name">
+      </div>
+      <div class="form-group col-3">
+        <label>Ability Type</label>
+        <input type="text" class="form-control" placeholder="Ability type">
+      </div>
     </div>
     <div class="form-group">
-      <label>Type</label>
-      <select class="form-control">
-        <option>Aberration</option>
-        <option>Beast</option>
-        <option>Celestial</option>
-        <option>Construct</option>
-        <option>Dragon</option>
-        <option>Elemental</option>
-        <option>Fey</option>
-        <option>Fiend</option>
-        <option>Giant</option>
-        <option>Humanoid</option>
-        <option>Dragon</option>
-        <option>Elemental</option>
-        <option>Dragon</option>
-        <option>Elemental</option>
-      </select>
+      <label>Abilty text</label>
+      <textarea class="form-control" rows="3" placeholder="Enter the ability effect text"></textarea>
+    </div>
+
+    <hr>
+
+    <h3>Attacks</h3>
+    <div class="form-row">
+      <div class="form-group col-6">
+        <input type="text" class="form-control" placeholder="Attack">
+      </div>
+      <div class="form-group col-3">
+        <input type="text" class="form-control" placeholder="Type">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-1">
+        <input type="number" class="form-control" placeholder="To hit">
+      </div>
+      <div class="form-group col-1">
+        <input type="number" class="form-control" placeholder="Reach">
+      </div>
+      <div class="form-group col-2">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Range">
+          <div class="input-group-append">
+            <span class="input-group-text">ft.</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-2">
+        <input type="text" class="form-control" placeholder="Targets">
+      </div>
+      <div class="form-group col-1">
+        <input type="number" class="form-control" placeholder="Dmg">
+      </div>
+      <div class="form-group col-2">
+        <input type="text" class="form-control" placeholder="Damage">
+      </div>
+      <div class="form-group col-3">
+        <input type="text" class="form-control" placeholder="Damage type">
+      </div>
     </div>
     <div class="form-group">
-      <label>Alignment</label>
-      <select class="form-control">
-        <option>Tiny</option>
-        <option>Small</option>
-        <option>Medium</option>
-        <option>Large</option>
-        <option>Huge</option>
-        <option>Gargantuan</option>
-      </select>
+      <label>Effect</label>
+      <textarea class="form-control" rows="3" placeholder="Enter the attack effect text"></textarea>
     </div>
+
+    <hr>
+
   </form>
 </div>
