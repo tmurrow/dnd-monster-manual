@@ -10,10 +10,12 @@
         <th>HP</th>
         <th>CR</th>
         <th>XP</th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let monster of monsters" [routerLink]="monster.url">
+      <tr *ngFor="let monster of monsters">
         <td>{{monster.name}}</td>
         <td>{{monster.size}}</td>
         <td>{{monster.monster_type}}</td>
@@ -22,6 +24,8 @@
         <td>{{monster.hp}} ({{monster.hd}})</td>
         <td>{{monster.cr}}</td>
         <td>{{monster.xp}}</td>
+        <td><button class="btn btn-sm btn-outline-dark" [routerLink]="monster.url">View</button></td>
+        <td><button class="btn btn-sm btn-outline-dark"  routerLink='/newmonster'>Edit</button></td>
       </tr>
     </tbody>
   </table>
