@@ -25,7 +25,7 @@
         <td>{{monster.cr}}</td>
         <td>{{monster.xp}}</td>
         <td><button class="btn btn-sm btn-outline-dark" [routerLink]="monster.url">View</button></td>
-        <td><button class="btn btn-sm btn-outline-dark"  routerLink='/newmonster'>Edit</button></td>
+        <td><button class="btn btn-sm btn-outline-dark" [routerLink]="[monster.url + '/edit']">Edit</button></td>
       </tr>
     </tbody>
   </table>

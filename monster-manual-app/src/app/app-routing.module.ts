@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AllMonstersComponent, MonsterDetailsComponent, NewMonsterComponent } from './views';
+import { AllMonstersComponent, MonsterDetailsComponent, NewMonsterComponent, EditMonsterComponent } from './views';
 import { MonstersResolver, MonsterResolver } from './resolvers';
 
 const routes: Routes = [
@@ -37,10 +37,17 @@ const routes: Routes = [
     }
   },
   {
-    path: 'newmonster',
+    path: 'monsters/new',
     component: NewMonsterComponent,
     data: {
       title: 'New Monster'
+    }
+  },
+  {
+    path: 'monsters/:url/edit',
+    component: EditMonsterComponent,
+    resolve: {
+      monster: MonsterResolver
     }
   }
 ];

@@ -10,6 +10,8 @@ import { HomeComponent } from './views/home/home.component';
 import { AllMonstersComponent } from './views/all-monsters/all-monsters.component';
 import { MonsterDetailsComponent } from './views/monster-details/monster-details.component';
 import { NewMonsterComponent } from './views/new-monster/new-monster.component';
+import { MonsterFormComponent } from './components/monster-form/monster-form.component';
+import { EditMonsterComponent } from './views/edit-monster/edit-monster.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { NewMonsterComponent } from './views/new-monster/new-monster.component';
     HomeComponent,
     AllMonstersComponent,
     MonsterDetailsComponent,
-    NewMonsterComponent
+    NewMonsterComponent,
+    MonsterFormComponent,
+    EditMonsterComponent
   ],
   imports: [
     BrowserModule,
