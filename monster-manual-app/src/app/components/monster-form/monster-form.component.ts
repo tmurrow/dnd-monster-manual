@@ -17,6 +17,7 @@ damage_types;
 conditions;
 senses;
 ability_types;
+tags;
 
   constructor(private staticDataService: StaticDataService) { }
 
@@ -34,6 +35,7 @@ ability_types;
     this.conditions = this.staticDataService.getConditions();
     this.senses = this.staticDataService.getSenses();
     this.ability_types = this.staticDataService.getAbilityTypes();
+    this.tags = this.staticDataService.getTags();
   }
 
 }

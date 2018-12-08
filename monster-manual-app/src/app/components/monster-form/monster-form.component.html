@@ -8,30 +8,21 @@
     <div class="form-row">
       <div class="form-group col-4">
         <label>Size</label>
-        <select class="form-control">
-          <option *ngFor="let size of sizes">{{size}}</option>
-        </select>
+        <ng-select [items]="sizes" placeholder="Size"></ng-select>
       </div>
       <div class="form-group col-4">
         <label>Type</label>
-        <select class="form-control">
-          <option *ngFor="let type of types">{{type}}</option>
-        </select>
+        <ng-select [items]="types" placeholder="Type"></ng-select>
       </div>
       <div class="form-group col-4">
         <label>Alignment</label>
-        <select class="form-control">
-          <option *ngFor="let alignment of alignments">{{alignment}}</option>
-        </select>
+        <ng-select [items]="alignments" placeholder="Alignment"></ng-select>
       </div>
     </div>
     <div class="form-group">
       <label>Tags</label>
-      <select class="form-control" size="4" multiple>
-        <option>Blinded</option>
-        <option>Charmed</option>
-        <option>Deafened</option>
-      </select>
+      <ng-select [items]="tags" placeholder="Tags" multiple="true" [addTag]="true"></ng-select>
+      <small class="form-text text-muted">Press <code>Enter</code> to select a tag.</small>
     </div>
 
     <hr>

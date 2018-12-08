@@ -42,4 +42,8 @@ export class StaticDataService {
   getAbilityTypes() {
     return ["Action", "Passive", "Legendary"];
   }
+
+  getTags() {
+    return["aarakocra", "shapechanger", "legendary"];
+  }
 }
