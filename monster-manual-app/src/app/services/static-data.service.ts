@@ -38,4 +38,8 @@ export class StaticDataService {
   getSenses() {
     return ["Blindsight", "Darkvision", "Telepathy", "Tremorsense", "Truesight"];
   }
+
+  getAbilityTypes() {
+    return ["Action", "Passive", "Legendary"];
+  }
 }

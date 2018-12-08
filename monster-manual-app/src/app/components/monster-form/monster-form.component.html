@@ -26,6 +26,7 @@
       </div>
     </div>
     <div class="form-group">
+      <label>Tags</label>
       <select class="form-control" size="4" multiple>
         <option>Blinded</option>
         <option>Charmed</option>
@@ -36,31 +37,32 @@
     <hr>
 
     <div class="form-row">
-      <div class="form-group col-1">
+      <div class="form-group col-sm-1 col-2">
         <label>AC</label>
         <input type="number" class="form-control" placeholder="AC">
       </div>
-      <div class="form-group col-5">
+      <div class="form-group col-sm-5 col-10">
         <label>AC note</label>
         <input type="text" class="form-control" placeholder="AC notes, source, etc.">
       </div>
-      <div class="form-group col-1">
+      <div class="form-group col-sm-1 col-2">
         <label>HP</label>
         <input type="number" class="form-control" placeholder="HP">
       </div>
-      <div class="form-group col-5">
+      <div class="form-group col-sm-5 col-10">
         <label>Hit dice</label>
         <input type="text" class="form-control" placeholder="Hit dice, 1d8+2, etc.">
       </div>
     </div>
+
     <div class="form-row">
-      <div class="form-group col-2">
+      <div class="form-group col-6 col-lg-2">
         <label>Speed</label>
         <select class="form-control">
           <option *ngFor="let speed of speeds">{{speed}}</option>
         </select>
       </div>
-      <div class="form-group col-2">
+      <div class="form-group col-6 col-lg-2">
         <label>Distance</label>
         <div class="input-group mb-3">
           <input type="number" class="form-control" placeholder="Distance">
@@ -69,18 +71,23 @@
           </div>
         </div>
       </div>
+      <div class="form-group col-12 col-lg-4">
+        <label class="invisible d-none d-lg-inline-block">Add Speed</label>
+        <button class="btn btn-outline-secondary btn-block">Add Speed</button>
+      </div>
     </div>
 
     <hr>
-
+    <h4>Ability Scores</h4>
     <div class="form-row">
-      <div class="form-group col-2" *ngFor="let ability of ability_scores">
+      <div class="form-group col-6 col-sm-4 col-lg-2" *ngFor="let ability of ability_scores">
         <label>{{ability}}</label>
         <input type="number" class="form-control" placeholder="{{ability}}">
       </div>
     </div>
+    <h4>Saving Throws</h4>
     <div class="form-row">
-      <div class="form-group col-2" *ngFor="let ability of ability_scores">
+      <div class="form-group col-6 col-sm-4 col-lg-2" *ngFor="let ability of ability_scores">
         <label>{{ability}} Save</label>
         <input type="number" class="form-control" placeholder="{{ability}} Save">
       </div>
@@ -89,25 +96,25 @@
     <hr>
 
     <div class="form-row">
-      <div class="form-group col-3">
+      <div class="form-group col-12 col-md-6 col-lg-3">
         <label>Damage Immunities</label>
         <select class="form-control" size="4" multiple>
           <option *ngFor="let damage_type of damage_types">{{damage_type}}</option>
         </select>
       </div>
-      <div class="form-group col-3">
+      <div class="form-group col-12 col-md-6 col-lg-3">
         <label>Damage Resistances</label>
         <select class="form-control" size="4" multiple>
           <option *ngFor="let damage_type of damage_types">{{damage_type}}</option>
         </select>
       </div>
-      <div class="form-group col-3">
+      <div class="form-group col-12 col-md-6 col-lg-3">
         <label>Damage Vulnerabilities</label>
         <select class="form-control" size="4" multiple>
           <option *ngFor="let damage_type of damage_types">{{damage_type}}</option>
         </select>
       </div>
-      <div class="form-group col-3">
+      <div class="form-group col-12 col-md-6 col-lg-3">
         <label>Condition Immunities</label>
         <select class="form-control" size="4" multiple>
           <option *ngFor="let condition of conditions">{{condition}}</option>
@@ -118,13 +125,14 @@
     <hr>
 
     <div class="form-row">
-      <div class="form-group col-2">
+      <div class="form-group col-6 col-lg-2">
         <label>Sense</label>
-        <select class="form-control" size="4" multiple>
+        <select class="form-control">
           <option *ngFor="let sense of senses">{{sense}}</option>
         </select>
+        <small class="form-text text-muted">Telepathy is included here</small>
       </div>
-      <div class="form-group col-2">
+      <div class="form-group col-6 col-lg-2">
         <label>Distance</label>
         <div class="input-group mb-3">
           <input type="number" class="form-control" placeholder="Distance">
@@ -133,7 +141,13 @@
           </div>
         </div>
       </div>
-      <div class="form-group col-4">
+      <div class="form-group col-12 col-lg-4">
+        <label class="invisible d-none d-lg-inline-block">Add Sense</label>
+        <button class="btn btn-outline-secondary btn-block">Add Sense</button>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-12 col-md-8">
         <label>Languages</label>
         <select class="form-control" size="4" multiple>
           <option>Draconic</option>
@@ -142,11 +156,11 @@
           <option>Abyssal</option>
         </select>
       </div>
-      <div class="form-group col-2">
+      <div class="form-group col-6 col-md-2">
         <label>CR</label>
         <input type="number" class="form-control" placeholder="CR">
       </div>
-      <div class="form-group col-2">
+      <div class="form-group col-6 col-md-2">
         <label>XP</label>
         <input type="number" class="form-control" placeholder="XP">
       </div>
@@ -156,13 +170,15 @@
 
     <h3>Abilities</h3>
     <div class="form-row">
-      <div class="form-group col-3">
+      <div class="form-group col-12 col-sm-6">
         <label>Ability Name</label>
         <input type="text" class="form-control" placeholder="Ability name">
       </div>
-      <div class="form-group col-3">
+      <div class="form-group col-12 col-sm-6 col-lg-3">
         <label>Ability Type</label>
-        <input type="text" class="form-control" placeholder="Ability type">
+        <select class="form-control">
+          <option *ngFor="let ability_type of ability_types">{{ability_type}}</option>
+        </select>
       </div>
     </div>
     <div class="form-group">
@@ -174,38 +190,43 @@
 
     <h3>Attacks</h3>
     <div class="form-row">
-      <div class="form-group col-6">
+      <div class="form-group col-12 col-sm-6">
         <input type="text" class="form-control" placeholder="Attack">
       </div>
-      <div class="form-group col-3">
+      <div class="form-group col-12 col-sm-6 col-lg-3">
         <input type="text" class="form-control" placeholder="Type">
       </div>
     </div>
     <div class="form-row">
-      <div class="form-group col-1">
+      <div class="form-group col-4 col-lg-1">
         <input type="number" class="form-control" placeholder="To hit">
       </div>
-      <div class="form-group col-1">
-        <input type="number" class="form-control" placeholder="Reach">
+      <div class="form-group col-4 col-lg-1">
+        <div class="input-group">
+          <input type="number" class="form-control" placeholder="Reach">
+          <div class="input-group-append">
+            <span class="input-group-text">ft.</span>
+          </div>
+        </div>
       </div>
-      <div class="form-group col-2">
-        <div class="input-group mb-3">
+      <div class="form-group col-4 col-lg-2">
+        <div class="input-group">
           <input type="text" class="form-control" placeholder="Range">
           <div class="input-group-append">
             <span class="input-group-text">ft.</span>
           </div>
         </div>
       </div>
-      <div class="form-group col-2">
+      <div class="form-group col-12 col-lg-2">
         <input type="text" class="form-control" placeholder="Targets">
       </div>
-      <div class="form-group col-1">
+      <div class="form-group col-4 col-lg-1">
         <input type="number" class="form-control" placeholder="Dmg">
       </div>
-      <div class="form-group col-2">
+      <div class="form-group col-8 col-lg-2">
         <input type="text" class="form-control" placeholder="Damage">
       </div>
-      <div class="form-group col-3">
+      <div class="form-group col-12 col-lg-3">
         <input type="text" class="form-control" placeholder="Damage type">
       </div>
     </div>

@@ -3,13 +3,6 @@
     <thead class="thead-dark">
       <tr>
         <th>Name</th>
-        <th>Size</th>
-        <th>Type</th>
-        <th>Alignment</th>
-        <th>AC</th>
-        <th>HP</th>
-        <th>CR</th>
-        <th>XP</th>
         <th></th>
         <th></th>
       </tr>
@@ -17,13 +10,6 @@
     <tbody>
       <tr *ngFor="let monster of monsters">
         <td>{{monster.name}}</td>
-        <td>{{monster.size}}</td>
-        <td>{{monster.monster_type}}</td>
-        <td>{{monster.alignment}}</td>
-        <td>{{monster.ac}} ({{monster.ac_note}})</td>
-        <td>{{monster.hp}} ({{monster.hd}})</td>
-        <td>{{monster.cr}}</td>
-        <td>{{monster.xp}}</td>
         <td><button class="btn btn-sm btn-outline-dark" [routerLink]="[monster.url + '/view']">View</button></td>
         <td><button class="btn btn-sm btn-outline-dark" [routerLink]="[monster.url + '/edit']">Edit</button></td>
       </tr>

@@ -4,7 +4,7 @@
   <p *ngIf="monster.tags.length > 0">tags: <span *ngFor="let tag of monster.tags">{{tag}},</span></p>
 
   <div class="row">
-    <div class="col-6">
+    <div class="col-md-6">
       <p>AC: {{monster.ac}} <span *ngIf="monster.ac_note">({{monster.ac_note}})</span></p>
       <p>Hit points: {{monster.hp}} ({{monster.hd}})</p>
       <p>Speed: <span *ngFor="let speed of monster.speeds">{{speed.speed_type}}: {{speed.speed}} ft., </span></p>
@@ -41,7 +41,7 @@
       <p *ngIf="monster.legendary_actions > 0">Legendary Actions: {{monster.legendary_actions}}</p>
     </div>
 
-    <div class="col-6">
+    <div class="col-md-6">
       <table class="table table-sm table-striped table-hover">
         <thead>
           <tr>
