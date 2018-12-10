@@ -8,7 +8,7 @@ let monsterSchema = mongoose.Schema({
   alignment: String,
   ac: Number,
   ac_note: String,
-  hp: String,
+  hp: Number,
   hd: String,
   speeds: [{
     speed_type: String,

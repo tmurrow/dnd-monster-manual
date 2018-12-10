@@ -7,7 +7,7 @@ export class Monster {
   alignment: string;
   ac: number;
   ac_note: string;
-  hp: string;
+  hp: number;
   hd: string;
   speeds: {
     speed_type: string,
