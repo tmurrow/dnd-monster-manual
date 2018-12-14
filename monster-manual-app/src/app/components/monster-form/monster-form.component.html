@@ -7,20 +7,20 @@
   <div class="form-row">
     <div class="form-group col-12 col-sm-4">
       <label>Size</label>
-      <ng-select [items]="sizes" placeholder="Size"></ng-select>
+      <ng-select [items]="sizes" [selectOnTab]="true" [hideSelected]="true" placeholder="Size"></ng-select>
     </div>
     <div class="form-group col-12 col-sm-4">
       <label>Type</label>
-      <ng-select [items]="types" placeholder="Type"></ng-select>
+      <ng-select [items]="types" [selectOnTab]="true" [hideSelected]="true" placeholder="Type"></ng-select>
     </div>
     <div class="form-group col-12 col-sm-4">
       <label>Alignment</label>
-      <ng-select [items]="alignments" placeholder="Alignment"></ng-select>
+      <ng-select [items]="alignments" [selectOnTab]="true" [hideSelected]="true" placeholder="Alignment"></ng-select>
     </div>
   </div>
   <div class="form-group">
     <label>Tags</label>
-    <ng-select [items]="tags" placeholder="Tags" multiple="true" [addTag]="true"></ng-select>
+    <ng-select [items]="tags" [selectOnTab]="true" [hideSelected]="true" placeholder="Tags" multiple="true" [addTag]="true"></ng-select>
     <small class="form-text text-muted">Press <code>Enter</code> to select a tag.</small>
   </div>
 
@@ -48,7 +48,7 @@
   <div class="form-row">
     <div class="form-group col-6 col-lg-2">
       <label>Speed</label>
-      <ng-select [items]="speeds" placeholder="Speed Type"></ng-select>
+      <ng-select [items]="speeds" [selectOnTab]="true" [hideSelected]="true" placeholder="Speed Type"></ng-select>
     </div>
     <div class="form-group col-6 col-lg-2">
       <label>Distance</label>
@@ -86,19 +86,19 @@
   <div class="form-row">
     <div class="form-group col-12 col-md-6 col-lg-3">
       <label>Damage Immunities</label>
-      <ng-select [items]="damage_types" placeholder="Damage Immunities" multiple="true"></ng-select>
+      <ng-select [items]="damage_types" [selectOnTab]="true" [hideSelected]="true" placeholder="Damage Immunities" multiple="true"></ng-select>
     </div>
     <div class="form-group col-12 col-md-6 col-lg-3">
       <label>Damage Resistances</label>
-      <ng-select [items]="damage_types" placeholder="Damage Resistances" multiple="true"></ng-select>
+      <ng-select [items]="damage_types" [selectOnTab]="true" [hideSelected]="true" placeholder="Damage Resistances" multiple="true"></ng-select>
     </div>
     <div class="form-group col-12 col-md-6 col-lg-3">
       <label>Damage Vulnerabilities</label>
-      <ng-select [items]="damage_types" placeholder="Damage Vulnerabilities" multiple="true"></ng-select>
+      <ng-select [items]="damage_types" [selectOnTab]="true" [hideSelected]="true" placeholder="Damage Vulnerabilities" multiple="true"></ng-select>
     </div>
     <div class="form-group col-12 col-md-6 col-lg-3">
       <label>Condition Immunities</label>
-      <ng-select [items]="conditions" placeholder="Condition Immunities" multiple="true"></ng-select>
+      <ng-select [items]="conditions" [selectOnTab]="true" [hideSelected]="true" placeholder="Condition Immunities" multiple="true"></ng-select>
     </div>
   </div>
 
@@ -107,7 +107,7 @@
   <div class="form-row">
     <div class="form-group col-7 col-lg-2">
       <label>Skill</label>
-      <ng-select [items]="skills" placeholder="Skill"></ng-select>
+      <ng-select [items]="skills" [selectOnTab]="true" [hideSelected]="true" placeholder="Skill"></ng-select>
     </div>
     <div class="form-group col-5 col-lg-2">
       <label>Bonus</label>
@@ -129,7 +129,7 @@
   <div class="form-row">
     <div class="form-group col-7 col-lg-2">
       <label>Sense</label>
-      <ng-select [items]="senses" placeholder="Sense"></ng-select>
+      <ng-select [items]="senses" [selectOnTab]="true" [hideSelected]="true" placeholder="Sense"></ng-select>
       <small class="form-text text-muted">Telepathy is included here</small>
     </div>
     <div class="form-group col-5 col-lg-2">
@@ -148,7 +148,7 @@
   </div>
   <div class="form-group">
     <label>Languages</label>
-    <ng-select [items]="languages" placeholder="Languages" [addTag]="true" multiple="true"></ng-select>
+    <ng-select [items]="languages" [selectOnTab]="true" [hideSelected]="true" placeholder="Languages" [addTag]="true" multiple="true"></ng-select>
   </div>
   <div class="form-row">
     <div class="form-group col-3">
@@ -176,7 +176,7 @@
       </div>
       <div class="form-group col-12 col-sm-6 col-lg-3">
         <label>Ability Type</label>
-        <ng-select [items]="ability_types" placeholder="Ability Type"></ng-select>
+        <ng-select [items]="ability_types" [selectOnTab]="true" [hideSelected]="true" placeholder="Ability Type"></ng-select>
       </div>
     </div>
     <div class="form-group">
@@ -246,11 +246,11 @@
   <div class="form-row">
     <div class="form-group col-lg-6">
       <label>Climate</label>
-      <ng-select [items]="climates" placeholder="Climate" [addTag]="true" multiple="true"></ng-select>
+      <ng-select [items]="climates" [selectOnTab]="true" [hideSelected]="true" placeholder="Climate" [addTag]="true" multiple="true"></ng-select>
     </div>
     <div class="form-group col-lg-6">
       <label>Terrain</label>
-      <ng-select [items]="terrains" placeholder="Terrain" [addTag]="true" multiple="true"></ng-select>
+      <ng-select [items]="terrains" [selectOnTab]="true" [hideSelected]="true" placeholder="Terrain" [addTag]="true" multiple="true"></ng-select>
     </div>
   </div>
   <div class="form-row">
@@ -310,7 +310,7 @@
   <span class="relationships">
     <div class="form-group">
       <label>Monster</label>
-      <ng-select [items]="monsters" placeholder="Monster"></ng-select>
+      <ng-select [items]="monsters" [selectOnTab]="true" [hideSelected]="true" placeholder="Monster"></ng-select>
     </div>
     <div class="form-group">
       <label>Relationship</label>
