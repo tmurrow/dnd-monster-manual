@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment.local';
 import { Monster } from '../models'
@@ -15,15 +15,15 @@ export class ApiService {
     return environment.api_url;
   }
 
-  getMonsters(): Observable<Monster[]> {
-    return this.http.get<Monster[]>(this.ApiBaseUrl+'monsters');
+  getMonsters(): Observable<HttpResponse<Monster[]>> {
+    return this.http.get<Monster[]>(this.ApiBaseUrl+'monsters', {observe: 'response'});
   }
 
-  getMonsterById(id): Observable<Monster> {
-    return this.http.get<Monster>(this.ApiBaseUrl+'monsters/' + id);
+  getMonsterById(id): Observable<HttpResponse<any>> {
+    return this.http.get<any>(this.ApiBaseUrl+'monsters/' + id, {observe: 'response'});
   }
 
-  getMonsterByName(url): Observable<Monster> {
-    return this.http.get<Monster>(this.ApiBaseUrl+'monsters/' + url);
+  getMonsterByName(url): Observable<HttpResponse<any>> {
+    return this.http.get<any>(this.ApiBaseUrl+'monsters/' + url, {observe: 'response'});
   }
 }
