@@ -1,27 +1,27 @@
-<form>
+<form [formGroup]="monsterForm">
   <div class="form-group">
     <label class="form-label-lg">Name</label>
-    <input type="text" class="form-control form-control-lg" placeholder="Enter the monster's name">
-    <small class="form-text text-muted">URL: <span *ngIf="monster">monsters/{{monster.url}}</span></small>
+    <input type="text" formControlName="name" class="form-control form-control-lg" placeholder="Enter the monster's name">
+    <small class="form-text text-muted">URL: monsters/{{monster.url}}</small>
   </div>
   <div class="form-row">
     <div class="form-group col-12 col-sm-4">
       <label>Size</label>
-      <ng-select [items]="sizes" [selectOnTab]="true" [hideSelected]="true" placeholder="Size"></ng-select>
+      <ng-select formControlName="size" [items]="sizes" [selectOnTab]="true" placeholder="Size"></ng-select>
     </div>
     <div class="form-group col-12 col-sm-4">
       <label>Type</label>
-      <ng-select [items]="types" [selectOnTab]="true" [hideSelected]="true" placeholder="Type"></ng-select>
+      <ng-select formControlName="monsterType" [items]="types" [selectOnTab]="true" placeholder="Type"></ng-select>
     </div>
     <div class="form-group col-12 col-sm-4">
       <label>Alignment</label>
-      <ng-select [items]="alignments" [selectOnTab]="true" [hideSelected]="true" placeholder="Alignment"></ng-select>
+      <ng-select formControlName="alignment" [items]="alignments" [selectOnTab]="true" placeholder="Alignment"></ng-select>
     </div>
   </div>
   <div class="form-group">
     <label>Tags</label>
-    <ng-select [items]="tags" [selectOnTab]="true" [hideSelected]="true" placeholder="Tags" multiple="true" [addTag]="true"></ng-select>
-    <small class="form-text text-muted">Press <code>Enter</code> to select a tag.</small>
+    <ng-select formControlName="selectedTags" [items]="tags" [selectOnTab]="true" [hideSelected]="true" placeholder="Tags" multiple="true" [addTag]="true"></ng-select>
+    <small class="form-text text-muted">Press <code>Tab</code> or <code>Enter</code> to select a tag.</small>
   </div>
 
   <hr>
@@ -45,17 +45,19 @@
     </div>
   </div>
 
-  <div class="form-row">
-    <div class="form-group col-6 col-lg-2">
-      <label>Speed</label>
-      <ng-select [items]="speeds" [selectOnTab]="true" [hideSelected]="true" placeholder="Speed Type"></ng-select>
-    </div>
-    <div class="form-group col-6 col-lg-2">
-      <label>Distance</label>
-      <div class="input-group">
-        <input type="number" class="form-control" placeholder="Distance">
-        <div class="input-group-append">
-          <span class="input-group-text">ft.</span>
+  <div class="form-row" formArrayName="speeds" *ngFor="let speedGroup of speeds.controls; let i = index">
+    <div [formGroupName]="i">
+      <div class="form-group col-6 col-lg-2">
+        <label>Speed</label>
+        <ng-select formControlName="speedType" [items]="speeds" [selectOnTab]="true" placeholder="Speed Type"></ng-select>
+      </div>
+      <div class="form-group col-6 col-lg-2">
+        <label>Distance</label>
+        <div class="input-group">
+          <input formControlName="speedDistance" type="number" class="form-control" placeholder="Distance">
+          <div class="input-group-append">
+            <span class="input-group-text">ft.</span>
+          </div>
         </div>
       </div>
     </div>
@@ -107,7 +109,7 @@
   <div class="form-row">
     <div class="form-group col-7 col-lg-2">
       <label>Skill</label>
-      <ng-select [items]="skills" [selectOnTab]="true" [hideSelected]="true" placeholder="Skill"></ng-select>
+      <ng-select [items]="skills" [selectOnTab]="true" placeholder="Skill"></ng-select>
     </div>
     <div class="form-group col-5 col-lg-2">
       <label>Bonus</label>
@@ -129,7 +131,7 @@
   <div class="form-row">
     <div class="form-group col-7 col-lg-2">
       <label>Sense</label>
-      <ng-select [items]="senses" [selectOnTab]="true" [hideSelected]="true" placeholder="Sense"></ng-select>
+      <ng-select [items]="senses" [selectOnTab]="true" placeholder="Sense"></ng-select>
       <small class="form-text text-muted">Telepathy is included here</small>
     </div>
     <div class="form-group col-5 col-lg-2">
@@ -176,7 +178,7 @@
       </div>
       <div class="form-group col-12 col-sm-6 col-lg-3">
         <label>Ability Type</label>
-        <ng-select [items]="ability_types" [selectOnTab]="true" [hideSelected]="true" placeholder="Ability Type"></ng-select>
+        <ng-select [items]="ability_types" [selectOnTab]="true" placeholder="Ability Type"></ng-select>
       </div>
     </div>
     <div class="form-group">
@@ -310,7 +312,7 @@
   <span class="relationships">
     <div class="form-group">
       <label>Monster</label>
-      <ng-select [items]="monsters" [selectOnTab]="true" [hideSelected]="true" placeholder="Monster"></ng-select>
+      <ng-select [items]="monsters" [selectOnTab]="true" placeholder="Monster"></ng-select>
     </div>
     <div class="form-group">
       <label>Relationship</label>
